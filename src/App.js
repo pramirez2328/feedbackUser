@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+const App = () => {
+  const title = "Blog Post";
+  const subtitle = "This is my blog post";
+  const comments = [
+    { id: 1, text: "this comment one" },
+    { id: 2, text: "this comment two" },
+    { id: 3, text: "this comment three" },
+    { id: 4, text: "this comment four" },
+  ];
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const cond = true;
+  const blog = (
+    <div className="container">
+      <h1 className="title">{title}</h1>
+      <h2 className="subtitle">{subtitle}</h2>
+      <p className="commentsLength">comments: {comments.length}</p>
+      <ul>
+        {comments.map((comment) => {
+          return <li key={comment.id}>{comment.text}</li>;
+        })}
+      </ul>
     </div>
   );
-}
-
+  return cond && blog;
+};
 export default App;
