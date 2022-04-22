@@ -1,11 +1,14 @@
 import React from "react";
 import Header from "./components/Header";
+import FeedbackItem from "./components/FeedbackItem";
 const App = () => {
-  const titleHeader = "this is good";
+  const titleHeader = "-Feedback rating";
   return (
     <>
       <Header text={titleHeader} />
-      <div className="container">this is my app</div>
+      <div className="container">
+        <FeedbackItem />
+      </div>
     </>
   );
 };
