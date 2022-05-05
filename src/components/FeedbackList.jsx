@@ -3,7 +3,7 @@ import FeedbackItem from "./FeedbackItem";
 import { useState } from "react";
 import ColorReverse from "./ColorReverse";
 
-function FeedbackList({ feedback }) {
+function FeedbackList({ feedback, deleteFeedback }) {
   const [toggleColor, setToggleColor] = useState(false);
 
   const handleReverse = () => {
@@ -11,7 +11,7 @@ function FeedbackList({ feedback }) {
   };
 
   if (!feedback || !feedback.length) {
-    return <p>No feed back yet!</p>;
+    return <p>No feedback yet!</p>;
   }
 
   return (
@@ -19,7 +19,12 @@ function FeedbackList({ feedback }) {
       <ColorReverse onReverse={handleReverse} />
       {feedback.map((item) => {
         return (
-          <FeedbackItem key={item.id} item={item} revColor={toggleColor} />
+          <FeedbackItem
+            key={item.id}
+            item={item}
+            revColor={toggleColor}
+            deleteFeedback={deleteFeedback}
+          />
         );
       })}
     </div>
