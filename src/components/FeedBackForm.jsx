@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./shared/Card";
+import Button from "./shared/Button";
 import { useState } from "react";
 
 function FeedBackForm() {
@@ -18,19 +19,7 @@ function FeedBackForm() {
             placeholder="- Write a review..."
             value={review}
           />
-          <button
-            type="submit"
-            style={{
-              width: "7rem",
-              backgroundColor: "#ff6a95",
-              border: "solid 1px black",
-              color: "white",
-              borderRadius: "3px",
-              padding: "3px",
-            }}
-          >
-            Send
-          </button>
+          <Button type="submit">Send</Button>
         </div>
       </form>
     </Card>
